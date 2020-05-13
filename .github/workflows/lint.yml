@@ -1,0 +1,12 @@
+name: Lint
+on: push
+jobs:
+    run-linters:
+        name: Run linters
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v1
+      
+            - name: Run Linters
+              run: docker-compose run lint
